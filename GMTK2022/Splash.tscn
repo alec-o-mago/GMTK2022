@@ -1,0 +1,22 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Splash.gd" type="Script" id=1]
+[ext_resource path="res://Assets/game-icon.png" type="Texture" id=2]
+
+[node name="Splash" type="Node2D"]
+script = ExtResource( 1 )
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 0.5
+autostart = true
+
+[node name="Label" type="Label" parent="."]
+margin_left = 280.0
+margin_top = 108.0
+margin_right = 368.0
+margin_bottom = 122.0
+text = "Splash Screen"
+
+[node name="Sprite" type="Sprite" parent="."]
+position = Vector2( 327, 180 )
+texture = ExtResource( 2 )

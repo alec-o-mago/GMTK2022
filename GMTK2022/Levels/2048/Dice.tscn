@@ -1,0 +1,48 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://Assets/dice-spritesheet.png" type="Texture" id=1]
+[ext_resource path="res://Levels/2048/Dice.gd" type="Script" id=2]
+
+[sub_resource type="Animation" id=2]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 1e-05, 1e-05 ) ]
+}
+
+[sub_resource type="Animation" id=1]
+resource_name = "spawn"
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.2 ),
+"transitions": PoolRealArray( 1, 0.366021 ),
+"update": 0,
+"values": [ Vector2( 1e-05, 1e-05 ), Vector2( 1, 1 ) ]
+}
+
+[node name="Dice" type="Sprite"]
+position = Vector2( 32, 32 )
+scale = Vector2( 1e-05, 1e-05 )
+texture = ExtResource( 1 )
+hframes = 7
+script = ExtResource( 2 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+autoplay = "spawn"
+anims/RESET = SubResource( 2 )
+anims/spawn = SubResource( 1 )
+
+[node name="Tween" type="Tween" parent="."]
