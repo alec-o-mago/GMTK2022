@@ -1,4 +1,4 @@
-# GMTK2022
+# Champion of Diceland
  Game created for GMTK2022
 
 ## How to Use
