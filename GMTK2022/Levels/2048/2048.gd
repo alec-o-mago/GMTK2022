@@ -71,7 +71,7 @@ func move_up()->void:
 	#print('move_up()') #debugging
 	var just_merged:bool = false #should not merge consecutively
 	for col in range(3):
-		for row in [2,1,2]:
+		for row in [1,2,1,2]:
 			if grid[row][col] != 0:
 				if grid[row-1][col] == 0:
 					just_merged = false
@@ -104,7 +104,7 @@ func move_down()->void:
 	#print('move_down()') #debugging
 	var just_merged:bool = false #should not merge consecutively
 	for col in range(3):
-		for row in [0,1,0]:
+		for row in [1,0,1,0]:
 			if grid[row][col] != 0:
 				if grid[row+1][col] == 0:
 					just_merged = false
@@ -137,7 +137,7 @@ func move_left()->void:
 	#print('move_left()') #debugging
 	var just_merged:bool = false #should not merge consecutively
 	for row in range(3):
-		for col in [2,1,2]:
+		for col in [1,2,1,2]:
 			if grid[row][col] != 0:
 				if grid[row][col-1] == 0:
 					just_merged = false
@@ -170,7 +170,7 @@ func move_right()->void:
 	#print('move_right()') #debugging
 	var just_merged:bool = false #should not merge consecutively
 	for row in range(3):
-		for col in [0,1,0]:
+		for col in [1,0,1,0]:
 			if grid[row][col] != 0:
 				if grid[row][col+1] == 0:
 					just_merged = false
